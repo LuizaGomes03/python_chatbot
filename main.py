@@ -25,7 +25,7 @@ def dialogflow():
 
     action = data['queryResult'].get('action', 'Unknown Action')
     parameters = data['queryResult'].get('parameters', {})
-    
+
     # Extrair callback_data corretamente da requisição do Telegram
     callback_data = data['originalDetectIntentRequest']['payload']['data']['callback_query'].get('data')
 
@@ -41,11 +41,14 @@ def dialogflow():
         response = format_response(['testando resposta', 'apareceu aii?'])
 
     elif action == 'teste.action':
-        # Tratar o callback_data com mais cuidado, para lidar com None
-        if callback_data == 'opcao_1':
-            response = format_response(['opção 1 selecionada'])
-        elif callback_data == 'opcao_2':
-            response = format_response(['opção 2 selecionada'])
+        if callback_data == 'Poupatempo':
+            response = format_response(['Escolha uma opção:'])
+        elif callback_data == 'Contato':
+            response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
+        elif callback_data == 'Endereço':
+            response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
+        elif callback_data == 'Acessibilidade':
+            response = format_response(['Oferecemos opções de acessibilidade. Fale conosco para mais informações.'])
         else:
             logger.warning(f'callback_data não reconhecido: {callback_data}')
             response = format_response(['Nenhuma opção válida foi selecionada.'])
