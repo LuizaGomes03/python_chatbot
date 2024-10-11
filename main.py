@@ -51,6 +51,27 @@ def dialogflow():
             logger.warning(f'callback_data não reconhecido: {callback_data}')
             response = format_response(['Nenhuma opção válida foi selecionada.'])
 
+    elif action == 'shopping.action':
+        if callback_data == 'Contato':
+            response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
+        elif callback_data == 'Endereço':
+            response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
+        elif callback_data == 'Acessibilidade':
+            response = format_response(['Oferecemos opções de acessibilidade. Fale conosco para mais informações.'])
+        else:
+            logger.warning(f'callback_data não reconhecido: {callback_data}')
+            response = format_response(['Nenhuma opção válida foi selecionada.'])
+
+    elif action == 'acessibilidade.action':
+        if callback_data == 'Shopping':
+            response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
+        elif callback_data == 'Poupatempo':
+            response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
+        else:
+            logger.warning(f'callback_data não reconhecido: {callback_data}')
+            response = format_response(['Nenhuma opção válida foi selecionada.'])
+
+
     elif action == 'inputUnknown':
         response = format_response(['Sorry, I did not understand that clearly.'])
 
