@@ -63,9 +63,9 @@ def dialogflow():
             response = format_response(['Nenhuma opção válida foi selecionada.'])
 
     elif action == 'acessibilidade.action':
-        if callback_data == 'Shopping':
+        if callback_data == 'Acessibilidade Shopping':
             response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
-        elif callback_data == 'Poupatempo':
+        elif callback_data == 'Acessibilidade Poupatempo':
             response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
         else:
             logger.warning(f'callback_data não reconhecido: {callback_data}')
