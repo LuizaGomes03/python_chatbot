@@ -41,23 +41,23 @@ def dialogflow():
         response = format_response(['testando resposta', 'apareceu aii?'])
 
     elif action == 'teste.action':
-        if callback_data == 'Contato':
+        if callback_data == 'Contato do Poupatempo':
             response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
         elif callback_data == 'Endereço':
             response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
-        elif callback_data == 'Acessibilidade':
-            response = format_response(['Oferecemos opções de acessibilidade. Fale conosco para mais informações.'])
+        elif callback_data == 'Horário de funcionamento do Poupatempo':
+            response = format_response(['O horário de funcionamento é: 8h às 18h de segunda a sexta.'])
         else:
             logger.warning(f'callback_data não reconhecido: {callback_data}')
             response = format_response(['Nenhuma opção válida foi selecionada.'])
 
     elif action == 'shopping.action':
-        if callback_data == 'Contato':
+        if callback_data == 'Contato do Shopping':
             response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
         elif callback_data == 'Endereço':
             response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
-        elif callback_data == 'Acessibilidade':
-            response = format_response(['Oferecemos opções de acessibilidade. Fale conosco para mais informações.'])
+        elif callback_data == 'Horario de funcionamento do shopping':
+            response = format_response(['O horário de funcionamento é: 8h às 18h de segunda a sexta.'])
         else:
             logger.warning(f'callback_data não reconhecido: {callback_data}')
             response = format_response(['Nenhuma opção válida foi selecionada.'])
