@@ -41,7 +41,7 @@ def dialogflow():
         response = format_response(['testando resposta', 'apareceu aii?'])
 
     elif action == 'teste.action':
-        if callback_data == 'Contato do Poupatempo':
+        if callback_data == 'Contato_Poupatempo':
             response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
         elif callback_data == 'Endereço':
             response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
@@ -52,7 +52,7 @@ def dialogflow():
             response = format_response(['Nenhuma opção válida foi selecionada.'])
 
     elif action == 'shopping.action':
-        if callback_data == 'Contato do Shopping':
+        if callback_data == 'Contato_Shopping':
             response = format_response(['Você pode entrar em contato pelo telefone: (XX) XXXX-XXXX.'])
         elif callback_data == 'Endereço':
             response = format_response(['Nosso endereço é: Rua Exemplo, 123 - Cidade - Estado.'])
